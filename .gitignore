@@ -9,3 +9,19 @@ Thumbs.db
 # Logs and env
 *.log
 .env
+
+# Generated preprocessing artifacts
+code/preprocess/cleaned/
+code/preprocess/events/
+code/preprocess/heatmaps/
+code/preprocess/scanpaths/
+code/preprocess/summaries/
+
+# Bytecode caches
+**/__pycache__/
+
+# Large media files
+*.mp4
+
+# Large datasets
+data/

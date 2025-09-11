@@ -1,0 +1,10 @@
+sampling_rate_hz: 60
+validity: at_least_one_eye   # use a sample if left OR right valid
+interp_max_gap_ms: 50        # interpolate short gaps
+min_fix_dur_ms: 60           # I-DT min fixation
+dispersion_thresh_norm: 0.05 # I-DT dispersion in normalized coords
+merge_fix_gap_ms: 50
+merge_fix_dist_norm: 0.03
+pupil_interp_max_gap_ms: 150
+pupil_pad_invalid_ms: 50
+
