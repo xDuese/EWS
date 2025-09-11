@@ -23,5 +23,3 @@ code/preprocess/summaries/
 # Large media files
 *.mp4
 
-# Large datasets
-data/
