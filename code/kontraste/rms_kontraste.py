@@ -284,4 +284,4 @@ for group_name, wanted_labels in GROUPS.items():
     if DO_STATS and len(present) >= 2:
         run_stats_subset(sub, present, group_dir, "rms_contrast")
 
-print(f"\nFertig. Ergebnisse liegen in : {OUT_DIR}")
+print(f"\nFertig. Ergebnisse liegen in: {OUT_DIR}")
