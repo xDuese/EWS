@@ -14,3 +14,6 @@ Usage
 Outputs
 - Written under this folder (code/preprocess/...) to keep code and artifacts together.
 
+
+Notes
+- Coordinates are remapped to the stimulus window defined in `code/preprocess/src/params.yaml` (`stimulus_x0_norm`/`stimulus_x1_norm` etc.). Adjust these values if the stimulus does not occupy the full display.

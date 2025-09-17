@@ -15,6 +15,10 @@ class CleaningConfig:
     interp_max_gap_ms: int
     pupil_interp_max_gap_ms: int
     pupil_pad_invalid_ms: int
+    stim_x0_norm: float = 0.0
+    stim_x1_norm: float = 1.0
+    stim_y0_norm: float = 0.0
+    stim_y1_norm: float = 1.0
     validity: str = "at_least_one_eye"
 
 
@@ -157,8 +161,23 @@ def fuse_gaze_samples(df: pd.DataFrame, cfg: CleaningConfig) -> pd.DataFrame:
         y_comb = (out["ly"] + out["ry"]) / 2.0
         valid = both_ok
 
-    out["x"] = x_comb
-    out["y"] = y_comb
+    out["x_display"] = x_comb
+    out["y_display"] = y_comb
+    x0 = float(cfg.stim_x0_norm)
+    x1 = float(cfg.stim_x1_norm)
+    y0 = float(cfg.stim_y0_norm)
+    y1 = float(cfg.stim_y1_norm)
+    width = max(1e-9, x1 - x0)
+    height = max(1e-9, y1 - y0)
+    x_img = (x_comb - x0) / width
+    y_img = (y_comb - y0) / height
+    on_stimulus = x_img.between(0.0, 1.0) & y_img.between(0.0, 1.0)
+    x_img = x_img.clip(0.0, 1.0)
+    out["x"] = x_img
+    y_img = y_img.clip(0.0, 1.0)
+    out["y"] = y_img
+    out["on_stimulus"] = on_stimulus
+    valid = valid & on_stimulus
 
     # Timebase
     out["timestamp_ms"] = get_time_series(out, cfg.sampling_rate_hz)

@@ -6,9 +6,6 @@ Hedgedoc:
     Group 2 - https://pad.uni-muenster.de/gy3lvO0pQGiCBUwAC0_EgQ#
     Group 3 - https://pad.uni-muenster.de/oF02329VSiujH96EE2ybZw#
 
-Sciebo: 
-
-
 Object Segmentation:
 
 https://huggingface.co/RyanJames/yolo12l-person-seg

@@ -20,6 +20,10 @@ class Params:
     merge_fix_dist_norm: float = 0.03
     pupil_interp_max_gap_ms: int = 150
     pupil_pad_invalid_ms: int = 50
+    stimulus_x0_norm: float = 0.0
+    stimulus_x1_norm: float = 1.0
+    stimulus_y0_norm: float = 0.0
+    stimulus_y1_norm: float = 1.0
 
 
 def _parse_simple_yaml(path: str) -> Dict[str, str]:

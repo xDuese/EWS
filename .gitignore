@@ -11,15 +11,10 @@ Thumbs.db
 .env
 
 # Generated preprocessing artifacts
-code/preprocess/cleaned/
-code/preprocess/events/
-code/preprocess/heatmaps/
-code/preprocess/scanpaths/
-code/preprocess/summaries/
+code/preprocess/raw_bin_combined.csv
 
 # Bytecode caches
 **/__pycache__/
 
 # Large media files
 *.mp4
-

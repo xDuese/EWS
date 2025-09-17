@@ -73,6 +73,10 @@ def process_trial(trial_id: str, trial_df: pd.DataFrame, params: Params) -> Dict
         interp_max_gap_ms=int(params.interp_max_gap_ms),
         pupil_interp_max_gap_ms=int(params.pupil_interp_max_gap_ms),
         pupil_pad_invalid_ms=int(params.pupil_pad_invalid_ms),
+        stim_x0_norm=float(params.stimulus_x0_norm),
+        stim_x1_norm=float(params.stimulus_x1_norm),
+        stim_y0_norm=float(params.stimulus_y0_norm),
+        stim_y1_norm=float(params.stimulus_y1_norm),
         validity=str(params.validity),
     )
 
