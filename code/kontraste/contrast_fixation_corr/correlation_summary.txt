@@ -1,0 +1,8 @@
+Kontrast–Fixation Korrelationen (trimmed 5–95 %)
+Laplace-Quelle : C:\Users\fabia\Desktop\EWS\code\kontraste\laplace_per_image\laplace_per_file.csv
+Fixation-Ordner: C:\Users\fabia\Desktop\EWS\code\preprocess\events\fixations
+Parquet-Engine : pyarrow
+
+Pearson  lap_var_norm vs n_fix_mean_trim    (n=152): r =  0.4659, p = 1.47e-09  [getrimmtes Mittel der Fixationsanzahl]
+Pearson  lap_var_norm vs tot_dur_mean_trim  (n=152): r =  0.3632, p = 4.25e-06  [getrimmtes Mittel der Gesamtdauer (ms)]
+Pearson  lap_var_norm vs med_dur_mean_trim  (n=152): r = -0.3313, p = 3.05e-05  [getrimmtes Mittel der Median-Dauer (ms)]
