@@ -1,0 +1,15 @@
+group,mean percentage,var percentage,mean percentage_fixations,var percentage_fixations,mean difference,mean text_portion,var text_portion,mean percentage_fixations/text_portion,var percentage_fixations/text_portion
+Text Hauptbestandteil,75.94,62.00,84.17,40.48,8.23,0.2642,0.0122,382.70,41350.70
+Text-Bild Kombination,43.83,559.61,51.01,618.80,7.18,0.1968,0.0088,270.99,11259.71
+-Memes,37.05,545.26,43.73,594.54,6.68,0.1860,0.0081,241.67,11347.73
+-Zitate,61.52,386.97,70.33,366.90,8.81,0.2228,0.0052,322.45,4283.37
+Text Hintergrund,17.69,142.82,19.79,160.48,2.10,0.0539,0.0021,631.15,274936.88
+nur Text,81.34,234.40,89.29,195.19,7.96,0.5146,0.0232,192.89,5499.37
+
+group,median percentage,var percentage (median),median percentage_fixations,var percentage_fixations (median),median difference,median text_portion,var text_portion (median),median percentage_fixations/text_portion,var percentage_fixations/text_portion (median)
+Text Hauptbestandteil,75.91,62.00,84.12,40.48,8.18,0.2485,0.0122,328.84,41350.70
+Text-Bild Kombination,43.61,559.61,52.44,618.80,7.59,0.1973,0.0088,253.92,11259.71
+-Memes,30.48,545.26,39.53,594.54,7.38,0.1635,0.0081,232.57,11347.73
+-Zitate,61.06,386.97,70.26,366.90,9.19,0.2061,0.0052,320.88,4283.37
+Text Hintergrund,14.80,142.82,18.55,160.48,1.41,0.0388,0.0021,451.55,274936.88
+nur Text,84.48,234.40,92.61,195.19,8.13,0.5564,0.0232,173.65,5499.37
