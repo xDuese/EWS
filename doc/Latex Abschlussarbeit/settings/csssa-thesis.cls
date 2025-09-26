@@ -357,8 +357,10 @@
         }
     }{
         \newcommand{\maketitlepage}{
+            \begingroup
+            \let\clearpage\relax
+            \onecolumn
             \thispagestyle{empty}
-            \begin{minipage}{\textwidth}
             \begin{center}
             \includegraphics[width=.3\textwidth]{settings/logos/UniMuenster_Schloss_2023_RGB.png}
         
@@ -391,13 +393,13 @@
             \end{center}
             \vspace{4mm}
             {\Large eingereicht am \@date\,\,von}\par
-            \vspace{20mm}
+            \vspace{15mm}
             {\LARGE{\@author}}\par
             \vspace{2mm}
-            {\LARGE{\@id}} \\ 
+            {{\@id}} \\ 
             \vspace{2mm}
-            {\LARGE{\@email}} \\ 
-            \vspace{55mm} 
+            {{\@email}} \\ 
+            \vfill
             \begin{minipage}{0.8\textwidth}
                 \centering
                 \Large{\@supervisor} \\ \vspace{2mm}
@@ -405,8 +407,9 @@
                 Computational Social Science \& Systems Analytics}}
             \end{minipage}
             \end{center}
-            \end{minipage}
-            \clearpage   
+            \clearpage  
+            \twocolumn 
+            \endgroup
         }
     }
         
