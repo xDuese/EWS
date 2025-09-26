@@ -24,11 +24,13 @@
 
 \title{Interpreting Visual Attention: A Systematic Analysis of Eye-Tracking Data}
 % If multiple authors write a (seminar) paper, use commas or newline (\\) to separate names, e-mail addresses, ids. Examples are given as comments below. 
-\author{David Lika, Joris Engels,}
+
+\author{David Lika, Jan Felix Deuse, Joris Engels, Maik Philipp Paulsen \\
+ Nikolaj Schlumbohm, Philip Alexander van Rickelen, Jan Schnorrenberg, Fabian Kizio}
 %\author{Maja Mustermann, Max Musterfrau} \author{First Middle Last Name\\Second Student with somewhat longer Name}
-\email{david.lika@uni-muenster.de, joris.engels@uni-muenster.de,}
+\email{david.lika@uni-muenster.de, jan.deuse@uni-muenster.de, joris.engels@uni-muenster.de, mpaulsen@uni-muenster.de, nschlumb@uni-muenster.de, philip.van.rickelen@uni-muenster.de, jan.schnorrenberg@uni-muenster.de, fabian.kizio@uni-muenster.de}
 % Matriculation Number
-\id{537160, 536427,}
+\id{537160, 537390, 536427, 537809, 537506, 539435, 536480, 526085}
 % Information about the thesis and the course
 \professor{Prof. Dr.-Ing. Grimme }
 \supervisor{Prof. Dr.-Ing. Grimme }
@@ -57,6 +59,7 @@
 
 
 % ============================================================
+
 \begin{document}
 \maketitlepage
 \maketitle
@@ -215,7 +218,7 @@ Hoher RMS heißt große Unterschiede zwischen hell und dunkel, unabhängig davon
 
 \paragraph{Laplace:}
 Laplace misst Kanten/Feinstruktur/Schärfe. Pipeline: (a) optional Gauß-Glättung ($\sigma$) zur Rauschreduktion, (b) Laplace-Filter, (c) Varianz des Laplace-Bildes, 
-geteilt durch die Varianz des (geglätteten) Intensitätsbildes. Hoher Wert bedeutet viele/kräftige Kanten, feine Details. 
+geteilt durch die Varianz des (geglätteten) Intensitätsbildes. Hoher Wert bedeutet viele/kräftige Kanten, feine Details \citep{Starnes2023}. 
 
 RMS misst den globalen Helligkeits-Kontrast eines Bildes (wie stark die Pixelwerte insgesamt um ihren Mittelwert schwanken),
 während Laplace den lokalen Kanten-/Detail-Kontrast erfasst (zweite Ableitung vom Helligkeitsgradienten: starke Reaktion genau dort, wo Intensität schnell wechselt).
@@ -240,7 +243,14 @@ siehe Abbildung \ref{fig:bild4} und \ref{fig:bild5} bis \ref{fig:bild9}
 \end{figure}
 
 \subsection{Interpretation \& Ergebnisse}
-Bilder mit hohem RMS-Kontrast oder hohen Laplace-Werten ziehen den Blick häufiger an und führen – trotz kürzerer Einzel­fixationen – zu einer höheren Gesamtdauer des Betrachtens. Das Muster passt zu einem Scanning- beziehungsweise Explorationsverhalten: Viele visuelle Ankerpunkte wie Kanten, Texturen oder Beschriftungen werden nacheinander kurz inspiziert. Dass die Laplace-Metrik stärker mit der Anzahl der Fixationen korreliert als RMS, legt nahe, dass Kanten und Feinstruktur ein besonders wirksamer Treiber der visuellen Aufmerksamkeit sind. Diese Befunde sind mit Ergebnissen aus der Salienz-Forschung vereinbar und knüpfen an die Literatur zu vorhersagbaren Blickbewegungen an. 
+Bilder mit hohem RMS-Kontrast oder hohen Laplace-Werten ziehen den Blick häufiger an und führen 
+– trotz kürzerer Einzel­fixationen – zu einer höheren Gesamtdauer des Betrachtens. 
+Das Muster passt zu einem Scanning- beziehungsweise Explorationsverhalten: 
+Viele visuelle Ankerpunkte wie Kanten, Texturen oder Beschriftungen werden nacheinander kurz inspiziert. 
+Dass die Laplace-Metrik stärker mit der Anzahl der Fixationen korreliert als RMS, legt nahe, 
+dass Kanten und Feinstruktur ein besonders wirksamer Treiber der visuellen Aufmerksamkeit sind. 
+Diese Befunde sind mit Ergebnissen aus der Salienz-Forschung vereinbar und knüpfen 
+an die Literatur zu vorhersagbaren Blickbewegungen an \citep{Foulsham2008}. 
 
 Wichtig ist eine methodische Einordnung: Eine Korrelation beweist keine Kausalität. Kategorien wie „Text“ oder „Person“ können zugleich den Kontrast und das Blickverhalten beeinflussen und so den Zusammenhang verzerren. Sinnvoll sind deshalb Analysen innerhalb homogener Kategorien, multiple Regressionen mit RMS, Laplace und Kategorie-Indikatoren, robuste Rangkorrelationen (Spearman) sowie Sensitivitätsanalysen für die gewählte Glättung beim Laplace-Maß. 
 
@@ -253,25 +263,25 @@ Als zentrale Mitnahme lassen sich beide Kontrastmaße komplementär nutzen. RMS 
 \subsection{Methodik}
 Recurrence quantification analysis (RQA) nach \citeauthor{Anderson2013-oj}. 
 Kurzfassung: Zu jeder Bildbetrachtung wird aus der zugehörigen Fixationssequenz 
-eine Rekurrenz Matrix berechnet. Aus dieser wiederum lassen sich die Metriken recurrence, 
-determinism, laminarity (jeweils in Prozent) und center of recurrence mass (corm) bestimmen. 
+eine Rekurrenz Matrix berechnet. Aus dieser wiederum lassen sich die Metriken \textit{recurrence}, 
+\textit{determinism}, \textit{laminarity} (jeweils in Prozent) und \textit{center of recurrence mass (corm)} bestimmen. 
 Diese wurden zu allen erhobenen Eye-Tracker Daten berechnet, auf Korrelation überprüft 
 und zu Histogrammen (nach unterschiedlichen Bildkategorien) aggregiert.
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{figures/Bild23.png}
+    \includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{figures/Bild23.jpeg}
     \caption{Histogramm Vergleich nach Person und laminarity LAM}\label{fig:bild19}
 \end{figure}
 
 \subsection{Ergebnisse und mögliche Interpretation}
 Abbildung \ref{fig:Bild10a} und \ref{fig:Bild10b} dienen als Beispiel dafür, wie sich die Metriken ergeben. 
 Abbildung \ref{fig:Bild11} zeigt die Verteilung der Metriken als Histogramm. Auffällig ist 
-die hohe Anzahl an „Null-Werten“ bei determinism und laminarity. 
+die hohe Anzahl an „Null-Werten“ bei \textit{determinism} und \textit{laminarity}. 
 In der Korrelationsmatrix in Abbildung \ref{fig:Bild12} lässt sich erkennen, dass diese zum 
-Teil mit einer niedrigen recurrence korrelieren (mehr dazu im Vergleich zwischen Bildkategorien nach Ort). 
+Teil mit einer niedrigen \textit{recurrence} korrelieren (mehr dazu im Vergleich zwischen Bildkategorien nach Ort). 
 Denn: Je weniger sich Fixationen wiederholen, desto seltener wiederholen sich 
-Fixationssequenzen (determinism) und desto seltener werden AOIs im Detail gescannt (laminarity). 
+Fixationssequenzen (\textit{determinism}) und desto seltener werden AOIs im Detail gescannt (\textit{laminarity}). 
 
 \begin{figure*}[ht]
     \centering
@@ -279,17 +289,17 @@ Fixationssequenzen (determinism) und desto seltener werden AOIs im Detail gescan
     \caption{Histogramme der Metriken aller Daten}\label{fig:Bild11}
 \end{figure*}
 
-Hohe determinism Werte können sich andererseits bspw. 
+Hohe \textit{determinism} Werte können sich andererseits bspw. 
 aus dem wiederholten Lesen von Text ergeben (Abb. \ref{fig:Bild13a} und ref{fig:Bild13b}). 
 Zusätzlich können hohe Ausreißer entstehen, wenn sich der Proband nur eine AOI anschaut (Abb. \ref{fig:Bild14a} und \ref{fig:Bild14b}). 
 
 \subsubsection{Vergleich zwischen Bildkategorien}
 In Abbildung \ref{fig:bild15} lässt sich erkennen, dass Bilder mit Text eine höhere Anzahl an Fixationen haben, 
 dies wird besonders deutlich ab mehr als 50 Fixationen. 
-Die recurrence dagegen ist für Bilder mit Text deutlich niedriger (Abb. \ref{fig:bild16}). 
+Die \textit{recurrence} dagegen ist für Bilder mit Text deutlich niedriger (Abb. \ref{fig:bild16}). 
 Im Kontext der Bildbetrachtung bedeutet dies, dass sich Texte je länger sie sind, 
 seltener mehrmals durchgelesen werden.  Schaut man auf die Korrelationsmatrix in Abbildung \ref{fig:Bild12}, 
-bestätigt sich der Trend der sinkenden recurrence mit steigender Fixationsanzahl. 
+bestätigt sich der Trend der sinkenden \textit{recurrence} mit steigender Fixationsanzahl. 
 Der niedrigere corm Wert (Abb. \ref{fig:bild17}) ergibt sich vermutlich daraus, dass Textelemente 
 nur einmal komplett am Anfang der Bildbetrachtung gelesen werden. Das reicht, 
 um den Wert trotz nachfolgender normaler Betrachtung der Bildelemente zu senken (siehe Abb. \ref{fig:Bild18a} und \ref{fig:Bild18b}). 
@@ -297,9 +307,9 @@ um den Wert trotz nachfolgender normaler Betrachtung der Bildelemente zu senken 
 Beim Vergleich von Bildern mit und ohne Person, sticht eine deutlich höhere laminarity heraus (Abb. \ref{fig:bild19}). 
 Dies liegt vermutlich daran, dass vor allem Gesichter im Verlauf der Bildbetrachtung erneut genauer betrachtet werden. 
 
-Beim Vergleich von Bildern nach Ort ist auffällig, dass Bilder mit Ort bei determinism und laminarity 
+Beim Vergleich von Bildern nach Ort ist auffällig, dass Bilder mit Ort bei \textit{determinism} und \textit{laminarity} 
 prozentual mehr als die doppelte Anzahl an „fast Null-Werten“ haben als ohne Ort (Abb. \ref{fig:Bild20a} und \ref{fig:Bild20b}), 
-obwohl die recurrence nur um 1,52\% sinkt. Dies könnte daran liegen, dass die AOIs bei reinen 
+obwohl die \textit{recurrence} nur um 1,52\% sinkt. Dies könnte daran liegen, dass die AOIs bei reinen 
 Orts-/ Landschaftsbildern oft verstreuter und unklarer sind. 
 
 Für Memes lassen sich die Unterschiede darauf zurückführen, dass diese oft Text, während politische Bilder oft Personen enthalten.  
@@ -582,19 +592,19 @@ und trägt damit zu einem besseren Verständnis menschlicher Informationsverarbe
 \end{figure}
 \begin{figure*}[ht]
     \centering
-    \includegraphics[width=0.8\textwidth,height=0.8\textheight,keepaspectratio]{figures/Bild13.png}
+    \includegraphics[width=0.8\textwidth,height=0.8\textheight,keepaspectratio]{figures/Bild13.jpeg}
     \caption{Korrelationsmatrix der Metriken + Histogramm}\label{fig:Bild12}
 \end{figure*}
 \begin{figure}[ht]
     \centering
     \begin{subfigure}{0.49\textwidth}
         \centering
-        \includegraphics[width=0.8\textwidth]{figures/Bild14.png}
+        \includegraphics[width=0.8\textwidth]{figures/Bild14.jpeg}
         \caption{Proband 42 mit Bild 128 und Heatmap}\label{fig:Bild13a}
     \end{subfigure}
     \begin{subfigure}{0.49\textwidth}
         \centering
-        \includegraphics[width=0.8\textwidth]{figures/Bild15.png}
+        \includegraphics[width=0.8\textwidth]{figures/Bild15.jpeg}
         \caption{Rekurrenz Plot zu Abbildung \ref{fig:Bild13a}}\label{fig:Bild13b}
     \end{subfigure}\label{fig:Bild13}
     \caption{N = 49, R = 154, REC = 13.10\%, DET = 70.\%, LAM = 43.51\%, CORM = 35.42\%}
@@ -604,12 +614,12 @@ und trägt damit zu einem besseren Verständnis menschlicher Informationsverarbe
     \centering
     \begin{subfigure}{0.49\textwidth}
         \centering
-        \includegraphics[width=0.8\textwidth]{figures/Bild16.jpg}
+        \includegraphics[width=0.8\textwidth]{figures/Bild16.jpeg}
         \caption{Proband 16 mit Bild 6 und Heatmap}\label{fig:Bild14a}
     \end{subfigure}
     \begin{subfigure}{0.49\textwidth}
         \centering
-        \includegraphics[width=0.8\textwidth]{figures/Bild17.png}
+        \includegraphics[width=0.8\textwidth]{figures/Bild17.jpeg}
         \caption{Rekurrenz Plot zu Abbildung \ref{fig:Bild14a}}\label{fig:Bild14b}
     \end{subfigure}\label{fig:Bild14}
     \caption{N = 35, R = 381, REC = 64.03\%, DET = 93.96\%, LAM = 91.99\%, CORM = 31.80\%}
@@ -618,29 +628,29 @@ und trägt damit zu einem besseren Verständnis menschlicher Informationsverarbe
     \centering
     \begin{subfigure}{0.49\textwidth}
         \centering
-        \includegraphics[width=0.8\textwidth]{figures/Bild10.jpg}
+        \includegraphics[width=0.8\textwidth]{figures/Bild10.jpeg}
         \caption{Proband 35 mit Bild 37 und Heatmap}\label{fig:Bild10a}
     \end{subfigure}
     \begin{subfigure}{0.49\textwidth}
         \centering
-        \includegraphics[width=0.8\textwidth]{figures/Bild11.png}
+        \includegraphics[width=0.8\textwidth]{figures/Bild11.jpeg}
         \caption{Rekurrenz Plot zu Abbildung \ref{fig:Bild10a}}\label{fig:Bild10b}
     \end{subfigure}\label{fig:Bild10}
     \caption{N = 23, R = 29, REC = 11.46\%, DET = 62.07\%, LAM = 25.86\%, CORM = 29.78\%}
 \end{figure}
 \begin{figure}[h]
     \centering
-    \includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{figures/Bild18.png}
+    \includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{figures/Bild18.jpeg}
     \caption{Histogramm Vergleich nach Text und Fixationsanzahl N}\label{fig:bild15}
 \end{figure}
 \begin{figure}[h]
     \centering
-    \includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{figures/Bild19.png}
+    \includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{figures/Bild19.jpeg}
     \caption{Histogramm Vergleich nach Text und recurrence REC}\label{fig:bild16}
 \end{figure}
 \begin{figure}[h]
     \centering
-    \includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{figures/Bild20.png}
+    \includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{figures/Bild20.jpeg}
     \caption{Histogramm Vergleich nach Text und corm}\label{fig:bild17}
 \end{figure}
 
@@ -648,12 +658,12 @@ und trägt damit zu einem besseren Verständnis menschlicher Informationsverarbe
     \centering
     \begin{subfigure}{0.49\textwidth}
         \centering
-        \includegraphics[width=0.8\textwidth]{figures/Bild21.png}
+        \includegraphics[width=0.8\textwidth]{figures/Bild21.jpeg}
         \caption{Proband 40 mit Bild 124 und Heatmap}\label{fig:Bild18a}
     \end{subfigure}
     \begin{subfigure}{0.49\textwidth}
         \centering
-        \includegraphics[width=0.8\textwidth]{figures/Bild22.png}
+        \includegraphics[width=0.8\textwidth]{figures/Bild22.jpeg}
         \caption{Rekurrenz Plot zu Abbildung \ref{fig:Bild18a}}\label{fig:Bild18b}
     \end{subfigure}\label{fig:Bild18}
     \caption{N = 31, R = 21, REC = 4.52\%, DET = 47.62\%, LAM = 54.76\%, CORM = 7.94\%}
@@ -662,12 +672,12 @@ und trägt damit zu einem besseren Verständnis menschlicher Informationsverarbe
     \centering
     \begin{subfigure}{0.49\textwidth}
         \centering
-        \includegraphics[width=0.8\textwidth]{figures/Bild24.png}
+        \includegraphics[width=0.8\textwidth]{figures/Bild24.jpeg}
         \caption{Histogramm Vergleich nach Ort und determinism DET }\label{fig:Bild20a}
     \end{subfigure}
     \begin{subfigure}{0.49\textwidth}
         \centering
-        \includegraphics[width=0.8\textwidth]{figures/Bild25.png}
+        \includegraphics[width=0.8\textwidth]{figures/Bild25.jpeg}
         \caption{Histogramm Vergleich nach Ort und laminarity LAM}\label{fig:Bild20b}
     \end{subfigure}\label{fig:Bild20}
     \caption{Vergleich der Histogramme mit Ort}
